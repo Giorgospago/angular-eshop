@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div id="contact_title" class="col-12 mt-3 mb-3">
+      {{ response.title }}
+    </div>
+    <div class="col-6">
+      <p>{{ response.paragraph }}</p>
+    </div>
+    <div class="col-6">
+      <span>email: {{ response.email }}</span><br>
+      <span>tel: {{ response.phone }}</span>
+    </div>
+    <div class="col-6">
+      <select class="custom-select" [(ngModel)]="coordinates">
+        <option value="" selected disabled hidden>Select Store</option>
+        <option
+          *ngFor="let dep of response.departments"
+          [ngValue]="dep.coordinates">{{ dep.title }}</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <agm-map
+        [latitude]="coordinates.lat"
+        [longitude]="coordinates.lng"
+        [zoom]="15"
+      >
+        <agm-marker
+          [latitude]="coordinates.lat"
+          [longitude]="coordinates.lng"
+        >
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>
+
+<!--response.departments[0].coordinates.lng-->
+
