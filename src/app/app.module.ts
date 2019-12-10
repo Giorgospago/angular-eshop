@@ -17,6 +17,7 @@ import { ProductComponent } from './components/product/product.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselHolderComponent } from './components/carousel-holder/carousel-holder.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 const routes = [
   {
@@ -63,7 +64,8 @@ const routes = [
       apiKey: ''
     }),
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FilterPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

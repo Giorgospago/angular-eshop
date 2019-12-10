@@ -19,5 +19,20 @@
         <a class="nav-link" routerLink="contact">Contact</a>
       </li>
     </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input 
+        [(ngModel)]="search"
+        class="form-control mr-sm-2" id="my_search" type="search" placeholder="Search" [ngModelOptions]="{standalone: true}">
+        <ul id="search_results" class="list-group" [hidden]="search == ''">
+          <li 
+          class="list-group-item"
+          *ngFor="let product of response.products | filterBy: {title: search}"
+          >
+          <a [routerLink]="'/products/'+product._id" (click)="search = ''">
+            <img [src]="product.photo">  {{ product.title }}
+          </a>
+          </li>
+        </ul>
+    </form>
   </div>
 </nav>

@@ -1,0 +1,13 @@
+form{
+    position: relative;
+}
+#search_results{
+    position: absolute;
+    top: 40px;
+    z-index: 100;
+    right: 7px;
+    width: 300px;
+}
+form img{
+    max-width: 30px;
+}
