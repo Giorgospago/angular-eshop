@@ -1,9 +1,14 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-6 offset-6">
+      <input type="text" [(ngModel)]="search" class="form-control"/>
+    </div>
+  </div>
+  <div class="row">
     <div id="products_title" class="col-12 mt-3 mb-3">
       {{ response.title }}
     </div>
-    <div class="card col-lg-3 col-md-4 col-6" *ngFor="let product of response.products">
+    <div class="card col-lg-3 col-md-4 col-6" *ngFor="let product of response.products | filterBy:{title: search}">
       <a [routerLink]="'/products/'+product._id">
         <img class="card-img-top" [src]="product.photo" alt="Card image cap">
       </a>

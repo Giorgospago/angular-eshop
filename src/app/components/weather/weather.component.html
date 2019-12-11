@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a routerLink="/weather/Thessaloniki">Thessaloniki</a>
+            <a routerLink="/weather/Larisa">Larisa</a>
+            <a routerLink="/weather/Honolulu">Honolulu</a>
+            <a routerLink="/weather/New York">New York</a>
+        </div>
+    </div>
+    <div class="row" *ngIf="data?.main">
+        <div class="col-6">
+            <h1>Temp: {{ data?.main?.temp }}</h1>
+            <h1>Humidity: {{ data?.main?.humidity }}%</h1>
+            <img *ngFor="let w of data?.weather" [src]="'https://openweathermap.org/img/wn/' + w.icon + '@2x.png'">
+        </div>
+        <div class="col-6">
+            <agm-map 
+            [latitude]="data?.coord?.lat" 
+            [longitude]="data?.coord?.lon">
+                <agm-marker 
+                    [latitude]="data?.coord?.lat" 
+                    [longitude]="data?.coord?.lon">
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>
+
+

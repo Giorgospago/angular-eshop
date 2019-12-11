@@ -18,6 +18,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselHolderComponent } from './components/carousel-holder/carousel-holder.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { BoxComponent } from './components/box/box.component';
+import { BoxesComponent } from './components/boxes/boxes.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 const routes = [
   {
@@ -39,6 +42,14 @@ const routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'boxes',
+    component: BoxesComponent
+  },
+  {
+    path: 'weather/:city',
+    component: WeatherComponent
   }
 ];
 
@@ -52,7 +63,10 @@ const routes = [
     FooterComponent,
     AboutComponent,
     ProductComponent,
-    CarouselHolderComponent
+    CarouselHolderComponent,
+    BoxComponent,
+    BoxesComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

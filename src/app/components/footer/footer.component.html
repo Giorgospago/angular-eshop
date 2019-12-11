@@ -1,7 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 fixed-bottom">
-      Footer
+      <button
+        class="btn btn-light"
+        (click)="ss.decreaseNumber()"
+      >-</button>
+      {{ ss.num }}
+      <button
+        class="btn btn-light"
+        (click)="ss.increaseNumber()"
+      >+</button>
+
+      <input type="color" [(ngModel)]="ss.txt"/>
+
     </div>
   </div>
 </div>
